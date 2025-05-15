@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Approve Applications</title>
+</head>
+<body>
+    <h1>Approve Applications</h1>
+    <ul>
+        {% for application in applications %}
+        <li>
+            {{ application.user_name }}: {{ application.content }} - {{ application.status }}
+            <form method="post">
+                <input type="hidden" name="app_id" value="{{ application.id }}">
+                <button type="submit">Approve</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
